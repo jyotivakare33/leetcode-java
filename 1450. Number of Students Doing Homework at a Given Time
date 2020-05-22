@@ -1,0 +1,10 @@
+class Solution {
+    public int busyStudent(int[] startTime, int[] endTime, int queryTime) {
+        int count = 0;
+        for(int index = 0; index <= startTime.length - 1; index++) {
+            if(queryTime >= startTime[index] && queryTime <= endTime[index])
+                count = count + 1;
+        }
+        return count;
+    }
+} 
