@@ -1,0 +1,17 @@
+class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int majorityElement = candies[0];
+        List<Boolean> result = new ArrayList<Boolean>();
+        for(int index = 0 ; index <= candies.length - 1 ; index++) {
+            if(candies[index] > majorityElement)
+                majorityElement = candies[index];
+        }
+        for(int index = 0 ; index <= candies.length - 1 ; index++) { 
+            if(candies[index] + extraCandies >= majorityElement) 
+                result.add(true);
+            else
+                result.add(false);
+        }
+        return result;
+    }
+}
