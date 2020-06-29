@@ -1,0 +1,16 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] output = new int[nums.length];
+        int count = 0;
+        for(int index = 0; index <= n - 1; index++) {
+            output[count] = nums[index];
+            count = count+2;
+        }
+        count = 1;
+        for(int index = n; index <= nums.length - 1; index++) {
+            output[count] = nums[index];
+            count = count + 2;
+        }
+        return output;
+    }
+}
