@@ -1,0 +1,18 @@
+class Solution {
+    public int[] decompressRLElist(int[] nums) {
+        int newArrLen = 0;
+        for(int i = 0; i < nums.length; i+=2){
+            newArrLen += nums[i];
+        }
+    
+        int [] output = new int[newArrLen];
+        int count = 0 ;
+        for(int index = 0; index <= nums.length - 1; index += 2){
+            for(int j = nums[index]; j > 0; j--){
+                output[count] = nums[index+1];
+                count++;                
+            }
+        }
+        return output;        
+    }
+}
